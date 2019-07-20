@@ -23,8 +23,8 @@ class App extends Component {
 
       setTimeout(() => {
         this.setState({products: productsFromJson});
-      }, 5000);
-      
+      }, 3000);
+
     };
 
   itemAdded = (itemInfo) => {
