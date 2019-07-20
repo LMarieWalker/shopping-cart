@@ -6,6 +6,7 @@ class CartItems extends React.Component {
   render() {
     // GET INDIVIDUAL CART ITEM
     // NOTE: cartItem = { id: 1, product: { id: 40, name: 'Mediocre Iron Watch', priceInCents: 399 }, quantity: 1 }
+
     const itemsList = this.props.cartItemsList.map( item =>
       <CartItem
         cartItem={ item }
@@ -25,25 +26,28 @@ class CartItems extends React.Component {
     return (
       <div className='container'>
         <div><hr /></div>
+
+
         <div className='card bg-info'>
           <div className='card-body'>
 
             <h1 className='card-title text-white'>Cart Items</h1>
 
-            <div className='list-group'>
-              <div className='list-group-item d-flex justify-content-between align-items-center'>
-                <span className='align-self-left'>Product</span>
-                <span className='align-self-center'>Quantity</span>
-                <span className='align-self-right'>Price</span>
-              </div>
-            </div>
-
-            { itemsList }
-
+            <table className='table'>
+              <thead>
+                <tr>
+                  <th scope='col'>Cart Id</th>
+                  <th scope='col'>Pdt #</th>
+                  <th scope='col'>Product Description</th>
+                  <th scope='col'>Qty</th>
+                  <th scope='col'>Price/each</th>
+                </tr>
+              </thead>
+              { itemsList }
+            </table>
             <div>
               <h3 className='bg-warning text-mutted text-danger'>Total: ${ (total/100).toFixed(2) }</h3>
             </div>
-
           </div>
         </div>
         <div><hr /></div>

@@ -4,13 +4,16 @@ const CartItem = ({ cartItem }) => {
 
   return (
 
-    <div className='list-group'>
-      <div className='list-group-item d-flex justify-content-between align-items-center'>
-        <span>{ cartItem.product.name }</span>
-        <span>{ cartItem.quantity }</span>
-        <span className='align-self-right badge badge-primary badge-pill'>${ (cartItem.product.priceInCents/100).toFixed(2) }</span>
-      </div>
-    </div>
+    <tbody>
+      <tr>
+        <th scope='row'>{ cartItem.id }</th>
+        <th scope='row'>{ cartItem.product.id }</th>
+        <td>{ cartItem.product.name }</td>
+        <td>{ cartItem.quantity }</td>
+        <td>${ (cartItem.product.priceInCents/100).toFixed(2) }</td>
+      </tr>
+    </tbody>
+
   );
 };
 

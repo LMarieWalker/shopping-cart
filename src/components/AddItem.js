@@ -33,14 +33,7 @@ class AddItem extends Component {
 
   render() {
     let productList = this.props.products.map( product => {
-      return (
-        <option
-          key={product.id}
-        >
-          { product.name }
-        </option>
-        // NOTE: product = { id: 40, name: 'Mediocre Iron Watch', priceInCents: 399 }
-      );
+      return ( <option key={product.id}> { product.name } </option> );
     });
 
     return (
